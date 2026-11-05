@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #fdf8ef;
+  --color-ink: #201a34;
+  --color-warm-white: #fffdf8;
+  --color-violet: #7051f3;
+  --color-violet-light: #e8e2fd;
+  --color-rose: #ff5d7d;
+  --color-sun: #ffc33d;
+  --color-teal: #12b7a5;
+  --color-sky: #49baff;
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* ── Custom Theme Tokens & Fallback Utilities ───────────────────── */
+
+:root {
+  --color-paper: #fdf8ef;
+  --color-ink: #201a34;
+  --color-warm-white: #fffdf8;
+  --color-violet: #7051f3;
+  --color-violet-light: #e8e2fd;
+  --color-rose: #ff5d7d;
+  --color-sun: #ffc33d;
+  --color-teal: #12b7a5;
+  --color-sky: #49baff;
+}
+
+/* Typography classes */
+.font-heading {
+  font-family: "Fraunces", Georgia, Cambria, "Times New Roman", serif;
+}
+
+.font-body {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Background utilities */
+.bg-paper { background-color: var(--color-paper); }
+.bg-ink { background-color: var(--color-ink); }
+.bg-warm-white { background-color: var(--color-warm-white); }
+.bg-violet { background-color: var(--color-violet); }
+.bg-violet-light { background-color: var(--color-violet-light); }
+.bg-rose { background-color: var(--color-rose); }
+.bg-sun { background-color: var(--color-sun); }
+.bg-teal { background-color: var(--color-teal); }
+.bg-sky { background-color: var(--color-sky); }
+
+/* Text utilities */
+.text-paper { color: var(--color-paper); }
+.text-ink { color: var(--color-ink); }
+.text-warm-white { color: var(--color-warm-white); }
+.text-violet { color: var(--color-violet); }
+.text-violet-light { color: var(--color-violet-light); }
+.text-rose { color: var(--color-rose); }
+.text-sun { color: var(--color-sun); }
+.text-teal { color: var(--color-teal); }
+.text-sky { color: var(--color-sky); }
+
+/* Border utilities */
+.border-ink { border-color: var(--color-ink); }
+.border-violet { border-color: var(--color-violet); }
+
+/* ── Base styles ───────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Prose (article content) ───────────────────────────────── */
+
+.prose {
+  max-width: 65ch;
+  line-height: 1.8;
+  font-size: 1.125rem;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  color: var(--color-ink);
+}
+
+.prose h1 {
+  font-size: 2.25rem;
+}
+
+.prose h2 {
+  font-size: 1.625rem;
+  border-bottom: 1px solid rgba(32, 26, 52, 0.1);
+  padding-bottom: 0.4em;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+}
+
+.prose p {
+  margin-bottom: 1.25em;
+}
+
+.prose a {
+  color: var(--color-violet);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  opacity: 0.8;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.25em;
+}
+
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+.prose li {
+  margin-bottom: 0.5em;
+}
+
+.prose blockquote {
+  border-left: 4px solid var(--color-violet);
+  padding-left: 1.25em;
+  margin: 1.75em 0;
+  font-style: italic;
+  font-size: 1.15em;
+  color: var(--color-ink);
+  opacity: 0.9;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid rgba(32, 26, 52, 0.15);
+  margin: 2.5em 0;
+}
