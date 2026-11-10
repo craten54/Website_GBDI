@@ -43,15 +43,15 @@ const CHANNELS = [
 
 export default function KontakPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24">
-      <header className="border-b border-ink/10 pb-10 text-center sm:text-left">
-        <span className="text-xs font-bold uppercase tracking-widest text-violet">
+    <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 text-white">
+      <header className="border-b border-white/10 pb-10 text-center sm:text-left">
+        <span className="text-xs font-bold uppercase tracking-widest text-amber-400">
           Terhubung dengan GBDI
         </span>
-        <h1 className="mt-2 font-heading text-4xl font-extrabold sm:text-5xl">
+        <h1 className="mt-2 font-heading text-4xl font-extrabold text-white sm:text-5xl">
           Kanal Resmi
         </h1>
-        <p className="mt-4 max-w-2xl text-lg text-ink/75">
+        <p className="mt-4 max-w-2xl text-lg text-white/80">
           Sebagai komunitas virtual, kami hadir di platform-platform digital tempat Anda biasa berjejaring. Jangan ragu untuk menyapa kami.
         </p>
       </header>
@@ -61,21 +61,21 @@ export default function KontakPage() {
         {CHANNELS.map((ch) => (
           <div
             key={ch.name}
-            className="flex flex-col justify-between rounded-3xl border border-ink/10 bg-warm-white p-8"
+            className="glass-card flex flex-col justify-between p-8 text-white transition hover:border-amber-400/40"
           >
             <div>
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider text-violet">
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
                   {ch.name}
                 </span>
-                <span className="font-mono text-xs text-ink/60">
+                <span className="font-mono text-xs text-white/60">
                   {ch.handle}
                 </span>
               </div>
-              <h2 className="mt-3 font-heading text-2xl font-bold">
+              <h2 className="mt-3 font-heading text-2xl font-bold text-white">
                 {ch.handle}
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-ink/75">
+              <p className="mt-3 text-sm leading-relaxed text-white/80">
                 {ch.desc}
               </p>
             </div>
@@ -85,7 +85,7 @@ export default function KontakPage() {
                 href={ch.href}
                 target={ch.isExternal ? "_blank" : undefined}
                 rel={ch.isExternal ? "noopener noreferrer" : undefined}
-                className="inline-flex w-full items-center justify-center rounded-full bg-violet px-6 py-3 text-sm font-bold text-white transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet"
+                className="inline-flex w-full items-center justify-center rounded-full bg-amber-500 px-6 py-3 text-sm font-bold text-black transition hover:bg-amber-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 shadow-md"
               >
                 {ch.cta}
               </a>
@@ -95,10 +95,9 @@ export default function KontakPage() {
       </div>
 
       {/* Note about dummy data */}
-      <div className="mt-16 rounded-2xl border border-ink/10 bg-paper p-6 text-center text-xs text-ink/60">
-        Catatan: Kontak dan tautan di atas saat ini menggunakan data konfigurasi awal ({siteConfig.email}). Data final akan diperbarui oleh pengelola sebelum rilis ke domain publik.
+      <div className="glass-card mt-16 p-6 text-center text-xs text-white/70 border-white/10">
+        Catatan: Kontak dan tautan di atas saat ini menggunakan data konfigurasi awal ({siteConfig.email}). Data final dapat diperbarui sewaktu-waktu oleh pengelola.
       </div>
     </div>
   );
 }
-

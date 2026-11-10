@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/komunitas/volunteer",
     "/komunitas/pendampingan",
     "/kontak",
+    "/about-this-site",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

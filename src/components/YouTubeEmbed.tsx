@@ -37,7 +37,7 @@ export function YouTubeEmbed({ videoId, title = "YouTube video player" }: YouTub
         <button
           type="button"
           onClick={() => setIsPlaying(true)}
-          className="flex h-16 w-16 items-center justify-center rounded-full bg-violet text-white shadow-lg transition-transform duration-200 group-hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet"
+          className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-500 text-black shadow-lg transition-transform duration-200 group-hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
           aria-label={`Putar video ${title}`}
         >
           <svg

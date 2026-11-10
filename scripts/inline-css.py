@@ -15,18 +15,13 @@ if css_files:
         with open(hf, "r", encoding="utf-8") as f:
             html = f.read()
         
-        # Check if already inlined
+        # Inject style if not present
         if "inlined-tailwind-css" not in html and "</head>" in html:
-            # Also replace leading slash for logo in local file view
-            html = html.replace('href="/logo-gbdi.png"', 'href="./logo-gbdi.png"')
-            html = html.replace('src="/logo-gbdi.png"', 'src="./logo-gbdi.png"')
-            # Inject style
-            html = html.replace("</head>", f"<style id=\"inlined-tailwind-css\">{css_content}</style></head>")
+            html = html.replace("</head>", f'<style id="inlined-tailwind-css">{css_content}</style></head>')
             with open(hf, "w", encoding="utf-8") as f:
                 f.write(html)
             count += 1
 
-    print(f"Successfully processed {count} HTML files with inlined CSS and local asset fixes!")
+    print(f"Successfully processed {count} HTML files with inlined CSS!")
 else:
     print("No CSS files found in out/_next/static/css")
-

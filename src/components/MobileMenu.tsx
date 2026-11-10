@@ -44,8 +44,8 @@ export function MobileMenu() {
         aria-controls="mobile-nav"
         aria-label={open ? "Tutup menu" : "Buka menu"}
         className="relative z-50 flex h-10 w-10 items-center justify-center rounded-lg
-                   text-ink hover:bg-violet-light focus-visible:outline-2
-                   focus-visible:outline-offset-2 focus-visible:outline-violet md:hidden"
+                   text-white hover:bg-white/10 focus-visible:outline-2
+                   focus-visible:outline-offset-2 focus-visible:outline-amber-400 md:hidden"
       >
         <svg
           width="24"
@@ -76,7 +76,7 @@ export function MobileMenu() {
       {/* Backdrop */}
       {open && (
         <div
-          className="fixed inset-0 z-30 bg-ink/40 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-30 bg-black/70 backdrop-blur-sm md:hidden"
           onClick={close}
           aria-hidden="true"
         />
@@ -85,8 +85,8 @@ export function MobileMenu() {
       {/* Slide-down panel */}
       <nav
         id="mobile-nav"
-        className={`fixed inset-x-0 top-0 z-40 flex flex-col gap-2 bg-paper px-6
-                    pb-8 pt-20 shadow-lg transition-transform duration-300 ease-in-out
+        className={`fixed inset-x-0 top-0 z-40 flex flex-col gap-2 bg-[#140e13]/95 border-b border-white/10
+                    px-6 pb-8 pt-20 shadow-2xl transition-transform duration-300 ease-in-out
                     md:hidden ${open ? "translate-y-0" : "-translate-y-full"}`}
         aria-label="Menu navigasi utama (mobile)"
       >
@@ -95,9 +95,9 @@ export function MobileMenu() {
             key={href}
             href={href}
             onClick={close}
-            className="rounded-lg px-4 py-3 text-lg font-semibold text-ink
-                       hover:bg-violet-light focus-visible:outline-2
-                       focus-visible:outline-offset-2 focus-visible:outline-violet"
+            className="rounded-lg px-4 py-3 text-lg font-semibold text-white/90
+                       hover:bg-white/10 hover:text-amber-300 focus-visible:outline-2
+                       focus-visible:outline-offset-2 focus-visible:outline-amber-400"
           >
             {label}
           </Link>
@@ -107,10 +107,10 @@ export function MobileMenu() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={close}
-          className="mt-4 inline-flex items-center justify-center rounded-full bg-violet
-                     px-6 py-3 text-base font-bold text-white hover:opacity-90
+          className="mt-4 inline-flex items-center justify-center rounded-full bg-amber-500
+                     px-6 py-3 text-base font-bold text-black hover:bg-amber-400
                      focus-visible:outline-2 focus-visible:outline-offset-2
-                     focus-visible:outline-violet"
+                     focus-visible:outline-amber-400"
         >
           Gabung di Discord
         </a>

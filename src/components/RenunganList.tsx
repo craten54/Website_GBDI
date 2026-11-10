@@ -22,14 +22,14 @@ export function RenunganList({ initialRenungan, allTags }: RenunganListProps) {
       {/* Tag filters */}
       {allTags.length > 0 && (
         <div className="flex flex-wrap items-center gap-2 pb-8">
-          <span className="text-xs font-semibold text-ink/60 mr-1">Filter topik:</span>
+          <span className="text-xs font-semibold text-white/60 mr-1">Filter topik:</span>
           <button
             type="button"
             onClick={() => setSelectedTag(null)}
-            className={`rounded-full px-3.5 py-1 text-xs font-semibold transition ${
+            className={`rounded-full px-4 py-1.5 text-xs font-semibold transition ${
               selectedTag === null
-                ? "bg-violet text-white"
-                : "border border-ink/15 bg-warm-white text-ink/75 hover:bg-violet-light/50"
+                ? "bg-amber-500 text-black font-bold shadow-md"
+                : "border border-white/20 bg-white/10 text-white/80 hover:bg-white/20"
             }`}
           >
             Semua
@@ -39,10 +39,10 @@ export function RenunganList({ initialRenungan, allTags }: RenunganListProps) {
               key={tag}
               type="button"
               onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
-              className={`rounded-full px-3.5 py-1 text-xs font-semibold capitalize transition ${
+              className={`rounded-full px-4 py-1.5 text-xs font-semibold capitalize transition ${
                 selectedTag === tag
-                  ? "bg-violet text-white"
-                  : "border border-ink/15 bg-warm-white text-ink/75 hover:bg-violet-light/50"
+                  ? "bg-amber-500 text-black font-bold shadow-md"
+                  : "border border-white/20 bg-white/10 text-white/80 hover:bg-white/20"
               }`}
             >
               #{tag}
@@ -53,14 +53,14 @@ export function RenunganList({ initialRenungan, allTags }: RenunganListProps) {
 
       {/* List */}
       {filtered.length === 0 ? (
-        <div className="rounded-2xl border border-ink/10 bg-warm-white p-12 text-center">
-          <p className="text-base text-ink/70">
+        <div className="glass-card rounded-2xl p-12 text-center text-white">
+          <p className="text-base text-white/75">
             Belum ada renungan dengan topik ini.
           </p>
           <button
             type="button"
             onClick={() => setSelectedTag(null)}
-            className="mt-4 text-xs font-bold text-violet underline underline-offset-2"
+            className="mt-4 text-xs font-bold text-amber-300 underline underline-offset-2"
           >
             Tampilkan semua renungan
           </button>
@@ -70,39 +70,39 @@ export function RenunganList({ initialRenungan, allTags }: RenunganListProps) {
           {filtered.map((item) => (
             <article
               key={item.slug}
-              className="group rounded-2xl border border-ink/10 bg-warm-white p-6 sm:p-8 transition-transform hover:-translate-y-0.5 hover:shadow-md"
+              className="glass-card-interactive group rounded-2xl p-6 sm:p-8"
             >
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-ink/60">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-white/60">
                 <time dateTime={item.date}>{formatDateIndonesian(item.date)}</time>
                 <span>•</span>
                 <span>{item.author}</span>
                 {item.verse && (
                   <>
                     <span>•</span>
-                    <span className="font-semibold text-violet">{item.verse}</span>
+                    <span className="font-semibold text-amber-300">{item.verse}</span>
                   </>
                 )}
               </div>
 
-              <h2 className="mt-3 font-heading text-2xl font-bold leading-snug group-hover:text-violet">
+              <h2 className="mt-3 font-heading text-2xl font-bold leading-snug text-white group-hover:text-amber-300 transition-colors">
                 <Link
                   href={`/renungan/${item.slug}`}
-                  className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet"
+                  className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
                 >
                   {item.title}
                 </Link>
               </h2>
 
-              <p className="mt-3 text-base leading-relaxed text-ink/75">
+              <p className="mt-3 text-base leading-relaxed text-white/75">
                 {item.excerpt}
               </p>
 
-              <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-ink/5 pt-4">
+              <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-4">
                 <div className="flex flex-wrap gap-1.5">
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-md bg-paper px-2 py-0.5 text-xs text-ink/60"
+                      className="rounded-md bg-white/10 px-2.5 py-0.5 text-xs text-white/75"
                     >
                       #{tag}
                     </span>
@@ -111,9 +111,9 @@ export function RenunganList({ initialRenungan, allTags }: RenunganListProps) {
 
                 <Link
                   href={`/renungan/${item.slug}`}
-                  className="text-xs font-bold text-violet group-hover:underline underline-offset-2"
+                  className="text-xs font-bold text-amber-400 group-hover:text-amber-300 group-hover:underline underline-offset-2"
                 >
-                  Baca selengkapnya
+                  Baca selengkapnya →
                 </Link>
               </div>
             </article>
@@ -123,4 +123,3 @@ export function RenunganList({ initialRenungan, allTags }: RenunganListProps) {
     </div>
   );
 }
-

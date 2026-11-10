@@ -24,14 +24,30 @@ export const siteConfig = {
   // Pengelola
   founder: "Pdt. Benedikt",
 
-  // Warna brand
+  // Pembuat & Pengembang Web (About this site)
+  creator: {
+    name: "Craten54",
+    role: "Web Designer & Frontend Developer",
+    github: "https://github.com/craten54",
+    email: "halo@contoh.id",
+    portfolio: "https://github.com/craten54/Website_GBDI",
+    note: "Situs web GBDI dirancang dan dibangun dari nol menggunakan Next.js App Router, TypeScript, dan Tailwind CSS.",
+  },
+
+  // Foto latar belakang utama (tersedia di /public/images/background.jpg)
+  backgroundImage: "/images/background.jpg",
+
+  // Warna brand hangat & bersahabat (Aksen Emas/Amber, Bebas Ungu)
   colors: {
-    violet: "#7051f3",
-    paper: "#fdf8ef",
-    ink: "#201a34",
-    warmWhite: "#fffdf8",
+    gold: "#d49a42",
+    goldLight: "#fbf2e3",
+    goldHover: "#e5aa52",
+    ink: "#ffffff",
+    inkMuted: "#e0d7ce",
+    terracotta: "#e07a5f",
+    amber: "#f4a261",
+    sand: "#ede0d4",
   },
 } as const;
 
 export type SiteConfig = typeof siteConfig;
-
